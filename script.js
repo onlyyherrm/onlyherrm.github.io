@@ -49,7 +49,10 @@ const events = {
 function updateEvent() {
     const currentDate = new Date();
     const formattedDate = `${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
+    console.log('Formatted Date:', formattedDate); // Log the formatted date
+
     const event = events[formattedDate] || events['default'];
+    console.log('Selected Event:', event); // Log the selected event
 
     document.getElementById('greeting').textContent = event.greeting;
     document.getElementById('gf-pic').src = event.imgSrc;
@@ -63,6 +66,10 @@ function updateEvent() {
     } else {
         messageElement.textContent = event.customMessage;
     }
+
+    console.log('Greeting:', event.greeting);
+    console.log('Image Source:', event.imgSrc);
+    console.log('Custom Message:', event.customMessage);
 }
 
 document.addEventListener('DOMContentLoaded', updateEvent);
