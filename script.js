@@ -41,7 +41,7 @@ const events = {
     },
     'default': {
         greeting: 'Happy Valentine week mero sanu❤️🫂!',
-        imgSrc: 'Photos/rose.jpg',
+        imgSrc: 'rose.jpg',
         customMessage: 'Iloveeeeeyouuuu sooo muchhh mero sanu🫂❤️. I\'m really lucky to have you by my side🫶🏻. You\'re everything I could ever wish for. You make me complete, you make me the happiest person alive😭❤️.'
     }
 };
