@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e48ca3;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+#app {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: #ffffffaa; /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+h1 {
+    color: #cbb2ff;
+    text-shadow: 2px 2px 5px rgb(57, 33, 33);
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+img {
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s; /* Smooth zoom effect */
+}
+
+img:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+}
+
+#custom-message {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ffc1e3; /* Light pink background */
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: colorChange 4s infinite;
+    transition: background-color 0.5s; /* Smooth transition */
+}
+
+#custom-message:hover {
+    background-color: #ff99cc; /* Darker pink on hover */
+}
+
+@keyframes colorChange {
+    0% { color: #FFB6C1; } /* Light Pink */
+    25% { color: #FF69B4; } /* Hot Pink */
+    50% { color: #FF1493; } /* Deep Pink */
+    75% { color: #DB7093; } /* Pale Violet Red */
+    100% { color: #FFB6C1; } /* Light Pink */
+}
