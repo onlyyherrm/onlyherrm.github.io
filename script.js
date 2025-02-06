@@ -63,10 +63,6 @@ function updateEvent() {
     } else {
         messageElement.textContent = event.customMessage;
     }
-
-    console.log('Greeting:', event.greeting);
-    console.log('Image Source:', event.imgSrc);
-    console.log('Custom Message:', event.customMessage);
 }
 
 document.addEventListener('DOMContentLoaded', updateEvent);
