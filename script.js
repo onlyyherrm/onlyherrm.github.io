@@ -49,7 +49,14 @@ const events = {
 function updateEvent() {
     const currentDate = new Date();
     const formattedDate = `${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
+    console.log('Current Date:', currentDate); // Log the raw current date
     console.log('Formatted Date:', formattedDate); // Log the formatted date
+
+    if (events[formattedDate]) {
+        console.log('Event Found:', events[formattedDate]);
+    } else {
+        console.log('No Event Found for Today, using default:', events['default']);
+    }
 
     const event = events[formattedDate] || events['default'];
     console.log('Selected Event:', event); // Log the selected event
