@@ -1,5 +1,5 @@
 const events = {
-    '02-06': {
+    '02-07': {
         greeting: 'Happy Rosee Day mero sanu🌹❤️!',
         imgSrc: 'rose.jpg',
         customMessage: 'Tme aafai rose jasto xeu tme lai k rosee dii rakhnu😭❤️. Paxii sagai vayesi sadhai lyaauxu haita sanu rose 🫶🏻. Iloveeeeyouuuu mero sanu🫂❤️'
