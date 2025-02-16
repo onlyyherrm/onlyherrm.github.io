@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Dictionaries: A Complete Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2, h3 {
+            color: #34495e;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            overflow-x: auto;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Python Dictionaries: A Complete Guide</h1>
+
+    <h2>1. Basics of Python Dictionaries</h2>
+    <p>A dictionary in Python is a mutable, unordered collection of key-value pairs. Here's how to work with them:</p>
+
+    <h3>Creating Dictionaries</h3>
+    <pre>
+# Empty dictionary
+my_dict = {}
+
+# Dictionary with initial values
+my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
+
+# Using the dict() constructor
+my_dict = dict(name='John', age=30, city='New York')
+    </pre>
+
+    <h3>Accessing Elements</h3>
+    <pre>
+# Accessing with square brackets
+print(my_dict['name'])  # Output: John
+
+# Using the get() method to avoid errors when key is missing
+print(my_dict.get('occupation', 'Not Specified'))  # Output: Not Specified
+    </pre>
+
+    <h2>2. Working with Dictionaries</h2>
+    <h3>Adding/Updating Elements</h3>
+    <pre>
+person = {'name': 'Emily', 'profession': 'Artist', 'age': 28}
+
+# Adding a new key-value pair
+person['hobby'] = 'Painting'
+
+# Updating an existing key-value pair
+person['age'] = 29
+
+print(person)
+# Output: {'name': 'Emily', 'profession': 'Artist', 'age': 29, 'hobby': 'Painting'}
+    </pre>
+
+    <h3>Deleting Elements</h3>
+    <pre>
+# Using the del keyword
+del person['age']
+
+# Using pop() to remove an item and return its value
+hobby = person.pop('hobby')
+
+# Removing all items from the dictionary
+person.clear()
+
+print(person)  # Output: {}
+    </pre>
+
+    <h3>Iterating Over Dictionaries</h3>
+    <pre>
+# Iterating over keys
+for key in person.keys():
+    print(key)
+
+# Iterating over values
+for value in person.values():
+    print(value)
+
+# Iterating over key-value pairs
+for key, value in person.items():
+    print(f'{key}: {value}')
+    </pre>
+
+    <h2>3. Advanced Dictionary Operations</h2>
+    <h3>Dictionary Comprehensions</h3>
+    <pre>
+# Creating a dictionary with comprehension
+squares = {x: x*x for x in range(6)}
+print(squares)
+# Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+    </pre>
+
+    <h3>Nested Dictionaries</h3>
+    <pre>
+family = {
+    'John': {'age': 30, 'job': 'Teacher'},
+    'Jane': {'age': 28, 'job': 'Engineer'}
+}
+print(family['John']['job'])  # Output: Teacher
+    </pre>
+
+    <h3>Merging Dictionaries</h3>
+    <pre>
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+
+# Using update() method
+dict1.update(dict2)
+
+# Using the ** operator
+merged_dict = {**dict1, **dict2}
+
+print(dict1)  # Output: {'a': 1, 'b': 3, 'c': 4}
+print(merged_dict)  # Output: {'a': 1, 'b': 3, 'c': 4}
+    </pre>
+
+    <h2>4. Dictionary Methods</h2>
+    <pre>
+contacts = {'John': '555-0101', 'Jane': '555-0202'}
+
+# Using get() to safely access a value
+print(contacts.get('Jake', 'No contact found'))  # Output: No contact found
+
+# Iterating over the items (key-value pairs)
+for name, number in contacts.items():
+    print(f'{name}: {number}')
+    </pre>
+
+    <h2>5. Real-World Applications</h2>
+    <h3>Database-like Storage</h3>
+    <pre>
+users = {
+    1001: {"name": "Alice", "email": "alice@example.com", "active": True},
+    1002: {"name": "Bob", "email": "bob@example.com", "active": False},
+}
+
+user_id = 1001
+if user_id in users:
+    print(users[user_id])  # Output: {'name': 'Alice', 'email': 'alice@example.com', 'active': True}
+    </pre>
+
+    <h3>Configuration Settings</h3>
+    <pre>
+config = {
+    "theme": "dark",
+    "notifications": True,
+    "language": "English"
+}
+
+print(config["theme"])  # Output: dark
+    </pre>
+
+    <h3>Counting Items</h3>
+    <pre>
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+word_count = {}
+
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+
+print(word_count)  # Output: {'apple': 3, 'banana': 2, 'orange': 1}
+    </pre>
+
+    <h2>6. Caching Results (Memoization)</h2>
+    <pre>
+def fibonacci(n, memo={}):
+    if n in memo:
+        return memo[n]
+    if n <= 2:
+        return 1
+    memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo)
+    return memo[n]
+
+print(fibonacci(10))  # Output: 55
+    </pre>
+
+    <h2>7. JSON Data</h2>
+    <pre>
+import json
+
+# Convert dictionary to JSON
+user_info = {"name": "Eva", "age": 29}
+user_info_json = json.dumps(user_info)
+print(user_info_json)  # Output: '{"name": "Eva", "age": 29}'
+
+# Convert JSON back to dictionary
+user_info_dict = json.loads(user_info_json)
+print(user_info_dict)  # Output: {'name': 'Eva', 'age': 29}
+    </pre>
+
+</body>
+</html>
