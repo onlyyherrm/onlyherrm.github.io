@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python def Keyword Explanation</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; padding: 20px; background-color: #f4f4f4; }
+        h1, h2 { color: #333; }
+        pre { background: #333; color: #fff; padding: 10px; overflow-x: auto; }
+        code { font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Python <code>def</code> Keyword - Deep Explanation</h1>
+    <h2>1. What is the <code>def</code> Keyword?</h2>
+    <p>The <code>def</code> keyword is used to define a function in Python. A function is a block of reusable code that performs a specific task when called.</p>
+    
+    <h2>2. Basic Syntax</h2>
+    <pre><code>def function_name(parameters):
+    """Optional: Docstring (explains what the function does)"""
+    # Function body (indented)
+    return value  # Optional</code></pre>
+    
+    <h2>3. Example Function</h2>
+    <pre><code>def greet():
+    print("Hello, welcome to Python!")
+greet()</code></pre>
+    
+    <h2>4. Parameters and Arguments</h2>
+    <pre><code>def add(a, b):
+    return a + b
+
+result = add(10, 5)
+print("Sum:", result)</code></pre>
+    
+    <h2>5. Return Statement</h2>
+    <pre><code>def square(num):
+    return num ** 2
+
+result = square(4)
+print("Square of 4 is:", result)</code></pre>
+    
+    <h2>6. Default Arguments</h2>
+    <pre><code>def greet(name="User"):
+    print("Hello,", name)
+
+greet("Alice")
+greet()</code></pre>
+    
+    <h2>7. Variable-Length Arguments</h2>
+    <h3>*args Example</h3>
+    <pre><code>def add_all(*args):
+    print("Sum:", sum(args))
+add_all(1, 2, 3, 4, 5)</code></pre>
+    
+    <h3>**kwargs Example</h3>
+    <pre><code>def show_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+show_info(name="Alice", age=25)</code></pre>
+    
+    <h2>8. Functions as Arguments</h2>
+    <pre><code>def square(x):
+    return x ** 2
+
+def apply_function(func, value):
+    return func(value)
+
+result = apply_function(square, 7)
+print("Result:", result)</code></pre>
+    
+    <h2>9. Lambda Functions</h2>
+    <pre><code>square = lambda x: x ** 2
+print("Square of 5:", square(5))</code></pre>
+    
+    <h2>10. Methods in Classes</h2>
+    <pre><code>class Person:
+    def __init__(self, name):
+        self.name = name
+    def greet(self):
+        print(f"Hello, my name is {self.name}.")
+p = Person("Alice")
+p.greet()</code></pre>
+    
+    <h2>11. Recursive Functions</h2>
+    <pre><code>def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+print("Factorial of 5:", factorial(5))</code></pre>
+    
+    <h2>12. Nested Functions</h2>
+    <pre><code>def outer():
+    print("Outer function")
+    def inner():
+        print("Inner function")
+    inner()
+outer()</code></pre>
+    
+    <h2>13. Decorators</h2>
+    <pre><code>def decorator(func):
+    def wrapper():
+        print("Before function call")
+        func()
+        print("After function call")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello!")
+say_hello()</code></pre>
+    
+    <h2>14. Key Takeaways</h2>
+    <ul>
+        <li>Use <code>def</code> to define functions.</li>
+        <li>Functions can accept inputs (<code>parameters</code>) and return outputs (<code>return</code>).</li>
+        <li>Use <code>*args</code> for multiple positional arguments, <code>**kwargs</code> for multiple keyword arguments.</li>
+        <li>Functions can be nested, recursive, or passed as arguments.</li>
+        <li>Decorators add extra functionality to functions.</li>
+    </ul>
+</body>
+</html>
+
